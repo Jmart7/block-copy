@@ -11,11 +11,10 @@ function App() {
   //   import.meta.url
   // ).toString();
 
-    const hdrTextureURL = new URL(
+  const hdrTextureURL = new URL(
     "../src/img/blockfondo.hdr",
     import.meta.url
   ).toString();
-
 
   useEffect(() => {
     const currentMount = mountRef.current;
