@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'PilatWide-Bold';
+  src: url(./fonts/PilatWide-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PPNeueMachina-PlainRegular';
+  src: url(./fonts/PPNeueMachina-PlainRegular.otf) format('opentype');
+}
+
 .container {
   display: flex;
   position: relative;
@@ -6,10 +15,174 @@
   overflow: hidden;
 }
 
-.div {
-  display: flex;
-}
-
 .cubeAndBackground {
   position: relative;
+}
+
+.layout {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 99;
+  pointer-events: none;
+  padding: 40px;
+  max-width: unset;
+  grid-gap: 0;
+  grid-template-columns: max-content auto max-content;
+  grid-template-rows: min-content auto min-content;
+  grid-template-areas:
+    "player . primaryNav"
+    ". . ."
+    "secondaryNav . legal";
+}
+
+a {
+  color: black !important;
+}
+
+.primaryNav, .secondaryNav, .player, .legal {
+  pointer-events: all;
+}
+
+.primaryNav {
+  grid-area: primaryNav;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: fit-content;
+}
+
+.primaryNav a {
+  font-size: 20px;
+  transition: color 0.2s ease-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  line-height: 120%;
+  font-family: 'PilatWide-Bold';
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 16px;
+}
+
+.primaryNav a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: background-color 0.2s;
+}
+
+.primaryNav a:hover {
+  color: white !important;
+}
+
+.primaryNav a:hover::after {
+  background-color: white;
+}
+
+.personAccesibility {
+  display: flex;
+  align-self: center;
+  width: 26px;
+  height: 31px;
+  align-items: flex-end;
+}
+
+.svgBox {
+  cursor: pointer;
+}
+
+.svgPerson {
+  width: 26px;
+  height: 33px;
+  transition: fill 0.2s ease-out;
+}
+
+.svgBox:hover .svgPerson {
+  fill: white;
+}
+
+.secondaryNav {
+  grid-area: secondaryNav;
+}
+
+.wrapper {
+  grid-template-rows: auto;
+  grid-template-columns: min-content max-content;
+  gap: 30px;
+  justify-content: start;
+  display: grid;
+  align-items: end;
+  padding: 0;
+}
+
+.secondaryNavHrefs {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  grid-template-columns: repeat(5, auto);
+}
+
+.secondaryNavHrefs a {
+  font-size: 20px;
+  font-family: 'PPNeueMachina-PlainRegular';
+  transition: color 0.2s ease-out;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  line-height: 120%;
+}
+
+.secondaryNavHrefs a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  transition: background-color 0.2s;
+}
+
+.secondaryNavHrefs a:hover {
+  color: white !important;
+}
+
+.secondaryNavHrefs a:hover::after {
+  background-color: white;
+}
+
+.player {
+  grid-area: player;
+}
+
+.legal {
+  grid-area: legal;
+  font-weight: 400;
+  justify-self: end;
+  align-self: end;
+  font-size: 10px;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.legal a {
+  transition: color 0.2s ease-out;
+  letter-spacing: 0.02em;
+}
+
+.legal span {
+  color: black;
 }

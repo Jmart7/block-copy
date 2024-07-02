@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Pilat Wide';
+  font-family: 'Pilat Wide', sans-serif !important;
   line-height: 1.5;
   font-weight: 400;
 
@@ -8,7 +8,7 @@
   background-color: #242424;
 
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

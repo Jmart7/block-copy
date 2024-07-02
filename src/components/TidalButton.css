@@ -1,0 +1,28 @@
+.tidal-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 300px;
+  cursor: pointer;
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  flex-grow: 1;
+}
+
+.text {
+  margin-left: 10px;
+}
+
+.logo {
+  margin-left: 10px;
+}
