@@ -20,8 +20,8 @@ const TidalButton: React.FC<TidalButtonProps> = ({ onPlay, onRedirect }) => {
           }
         </div>
         <div className='trackInfo'>
-          <div className='title'>And We Go Gentle</div>
-          <div className='artist'>Hiatus Kaiyote</div>
+          <div className='title'>Block Vibes</div>
+          <div className='artist'>Curated by JAY-Z</div>
         </div>
       </button>
       <div className="rightButton" onClick={onRedirect}>
