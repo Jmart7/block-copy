@@ -76,11 +76,11 @@ function App() {
 
   const handlePlay = () => {
     console.log("Playing the song...");
-    // Aquí puedes integrar la funcionalidad de reproducir la canción
   };
 
   const handleRedirect = () => {
-    window.location.href = "https://tidal.com/playlist"; // URL de la playlist de Tidal
+    // I want to redirect in another tab instead of the current one
+    window.open("https://tidal.com/browse/playlist/3d95c4f6-dad5-4d7f-a469-8bde01b7771d", "_blank");
   };
 
   return (

@@ -1,28 +1,91 @@
+@font-face {
+  font-family: 'PilatWide-Bold';
+  src: url(./fonts/PilatWide-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'PilarWide-Regular';
+  src: url(./fonts/PilatWide-Regular.ttf) format('truetype');
+}
+
+
 .tidal-button {
+  display: grid;
+  grid-template-columns: auto min-content;
+  height: 56px;
+  white-space: nowrap;
+  width: 290px;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px black solid;
+}
+
+.leftButton {
+  padding: 15px 12px 17px 20px;
+  min-width: 230px !important;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  background: rgba(255,255,255,0);
+  transition: background .2s ease-out,color .2s ease-out;
+  cursor: pointer;
+  pointer-events: all;
+  user-select: none;
   color: black;
-  border: 1px solid black;
-  border-radius: 25px;
-  padding: 10px 20px;
-  width: 300px;
+  position: relative;
+  border: none; /* Asegúrate de que no haya bordes adicionales */
+}
+
+.leftButton:hover {
+  background: #ffffff;  
+  outline: none; /* Eliminar la sombra del hover */
+}
+
+.leftButton:focus {
+  outline: none;
+}
+
+.iconWrapper {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+
+.trackInfo {
+  margin-left: 12px;
+  margin-right: 12px;
+  height: 24px;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 1px;
+  font-size: 10px;
+  font-family: 'pilatWide-Bold';
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  position: relative;
+  text-overflow: ellipsis;
+}
+
+.artist {
+  font-family: 'pilatWide-Regular';
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  position: relative;
+  text-overflow: ellipsis;
+}
+
+.rightButton {
+  border-left: 1px black solid;
+  padding: 16px 20px 16px 14px;
+  transition: background .2s ease-out;
   cursor: pointer;
 }
 
-.left, .right {
-  display: flex;
-  align-items: center;
-}
-
-.left {
-  flex-grow: 1;
-}
-
-.text {
-  margin-left: 10px;
-}
-
-.logo {
-  margin-left: 10px;
+.rightButton:hover {
+  background: #FFFFFF;
 }

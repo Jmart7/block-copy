@@ -6,6 +6,10 @@
   font-family: 'PPNeueMachina-PlainRegular';
   src: url(./fonts/PPNeueMachina-PlainRegular.otf) format('opentype');
 }
+@font-face {
+  font-family: 'PilatWide-Regular';
+  src: url(./fonts/PilatWide-Regular.ttf) format('truetype');
+}
 
 .container {
   display: flex;
@@ -44,6 +48,10 @@ a {
 
 .primaryNav, .secondaryNav, .player, .legal {
   pointer-events: all;
+}
+
+.player {
+  grid-area: player;
 }
 
 .primaryNav {
@@ -127,6 +135,20 @@ a {
   padding: 0;
 }
 
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    gap: 17px;
+    justify-content: start;
+    grid-template-rows: min-content max-content;
+    grid-template-columns: auto;
+  }
+
+  .legal {
+    max-width: 260px;
+    padding-right: 0;
+  }
+}
+
 .secondaryNavHrefs {
   display: flex;
   gap: 24px;
@@ -164,10 +186,6 @@ a {
   background-color: white;
 }
 
-.player {
-  grid-area: player;
-}
-
 .legal {
   grid-area: legal;
   font-weight: 400;
@@ -176,13 +194,46 @@ a {
   font-size: 10px;
   font-style: normal;
   line-height: 1.4;
+  pointer-events: none;
 }
 
 .legal a {
   transition: color 0.2s ease-out;
   letter-spacing: 0.02em;
+  pointer-events: all;
+  font-family: 'PilatWide-Bold';
+  position: relative;
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+
+.legal a:hover {
+  color: white !important;
+}
+
+.legal a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: black;
+  position: absolute;
+  left: 0;
+  transition: background-color 0.2s ease-out;
+  bottom: -1px;
+}
+
+.legal a:hover::after {
+  background-color: white !important;
 }
 
 .legal span {
   color: black;
+  font-family: 'PilatWide-Regular';
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  font-size: 10px;
+  font-style: normal;
+  line-height: 1.4;
+  pointer-events: none;
 }
