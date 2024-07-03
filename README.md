@@ -1,3 +1,7 @@
+## Block.xyz copy challenge
+
+Using Three.js, React and Typescript.
+
 ## How to run
 
 First you have to do
